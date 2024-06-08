@@ -1,0 +1,126 @@
+<resources>
+
+    <style name="Base.Theme.GithubUsers" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <item name="colorSecondary">@color/grey_con</item>
+        <item name="colorOnSecondary">@color/grey_con_text</item>
+
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/white</item>
+
+        <item name="android:fontFamily">@font/opensansregular</item>
+
+    </style>
+
+    <style name="AlertDialogCustom" parent="ThemeOverlay.Material3.Dialog.Alert">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/AlertDialogTextCustom</item>
+    </style>
+
+    <style name="AlertDialogTextCustom" parent="MaterialAlertDialog.Material3.Body.Text">
+        <item name="android:textColor">@color/grey_con_text</item>
+    </style>
+
+    <style name="FabShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">100%</item>
+    </style>
+
+    <style name="FabCustom">
+        <item name="backgroundTint">@color/blue</item>
+        <item name="tint">@color/white</item>
+        <item name="fabCustomSize">60dp</item>
+        <item name="maxImageSize">28dp</item>
+    </style>
+
+    <style name="ToolbarCustom">
+        <item name="android:fontFamily">@font/opensansbold</item>
+    </style>
+
+    <style name="SearchViewCustom">
+        <item name="android:fontFamily">@font/opensansregular</item>
+        <item name="android:background">@drawable/searchview_bg</item>
+        <item name="colorControlActivated">@color/blue</item>
+        <item name="android:textColorHint">@color/grey_con_text</item>
+    </style>
+
+    <style name="RadioButtonCustom">
+        <item name="android:background">@drawable/radiobutton_selector</item>
+        <item name="android:button">@drawable/radiobutton_null</item>
+        <item name="android:textColor">@drawable/radiobutton_text_selector</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:drawableTint">@drawable/radiobutton_text_selector</item>
+    </style>
+
+    <style name="TabLayoutCustom">
+        <item name="android:background">@color/white</item>
+        <item name="tabBackground">@color/white</item>
+        <item name="tabSelectedTextColor">@color/black</item>
+        <item name="tabTextColor">@color/grey_con_text</item>
+        <item name="tabIndicatorColor">@color/black</item>
+    </style>
+
+    <style name="TabFont">
+        <item name="android:fontFamily">@font/opensansbold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ProgressBarCustom">
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateTint">@color/black</item>
+    </style>
+
+    <style name="TextContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:fontFamily">@font/opensansregular</item>
+    </style>
+
+    <style name="TextContent.Body">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextContent.SubTitle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/grey_con_text</item>
+    </style>
+
+    <style name="TextContent.Title">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextContent.Body.ExtraBold">
+        <item name="android:fontFamily">@font/opensansextrabold</item>
+    </style>
+
+    <style name="TextContent.Body.Bold">
+        <item name="android:fontFamily">@font/opensansbold</item>
+    </style>
+
+    <style name="TextContent.Body.SemiBold">
+        <item name="android:fontFamily">@font/opensanssemibold</item>
+    </style>
+
+    <style name="TextContent.Title.ExtraBold">
+        <item name="android:fontFamily">@font/opensansextrabold</item>
+    </style>
+
+    <style name="TextContent.Title.Bold">
+        <item name="android:fontFamily">@font/opensansbold</item>
+    </style>
+
+    <style name="TextContent.Title.SemiBold">
+        <item name="android:fontFamily">@font/opensanssemibold</item>
+    </style>
+
+    <style name="Theme.GithubUsers" parent="Base.Theme.GithubUsers" />
+</resources>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:theme="@style/ToolbarCustom" />
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="?attr/colorPrimary"
+            app:toolbarId="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_social"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_detail_profile_picture"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/defaultpicture"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_detail_name"
+                style="@style/TextContent.Body.Bold"
+                android:layout_width="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/iv_detail_profile_picture"
+                app:layout_constraintTop_toBottomOf="@+id/iv_detail_profile_picture"
+                tools:text="Nabil Afkar" />
+
+            <LinearLayout
+                android:id="@+id/ll_followers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_detail_profile_picture"
+                app:layout_constraintStart_toEndOf="@+id/iv_detail_profile_picture"
+                app:layout_constraintTop_toTopOf="@+id/iv_detail_profile_picture">
+
+                <TextView
+                    android:id="@+id/tv_detail_followers"
+                    style="@style/TextContent.Title.Bold"
+                    tools:text="290" />
+
+                <TextView
+                    style="@style/TextContent.SubTitle"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/followers" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_following"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/ll_followers"
+                app:layout_constraintEnd_toStartOf="@+id/ll_repositories"
+                app:layout_constraintStart_toEndOf="@+id/ll_followers"
+                app:layout_constraintTop_toTopOf="@+id/ll_followers">
+
+                <TextView
+                    android:id="@+id/tv_detail_following"
+                    style="@style/TextContent.Title.Bold"
+                    tools:text="290" />
+
+                <TextView
+                    style="@style/TextContent.SubTitle"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/following" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_repositories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/ll_following"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ll_following">
+
+                <TextView
+                    android:id="@+id/tv_detail_repositories"
+                    style="@style/TextContent.Title.Bold"
+                    tools:text="290" />
+
+                <TextView
+                    style="@style/TextContent.SubTitle"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/repositories" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_bar_detail"
+                style="@style/ProgressBarCustom"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_detail_company"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_detail_bio"
+                style="@style/TextContent"
+                android:layout_width="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_detail_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_detail_name"
+                tools:text="Saya adalah android developer." />
+
+            <TextView
+                android:id="@+id/tv_detail_location"
+                style="@style/TextContent"
+                android:layout_width="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:drawablePadding="8dp"
+                app:drawableStartCompat="@drawable/ic_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_detail_bio"
+                app:layout_constraintTop_toBottomOf="@+id/tv_detail_bio"
+                tools:text="Indonesia" />
+
+            <TextView
+                android:id="@+id/tv_detail_company"
+                style="@style/TextContent"
+                android:layout_width="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:drawablePadding="8dp"
+                app:drawableStartCompat="@drawable/ic_building"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_detail_location"
+                app:layout_constraintTop_toBottomOf="@+id/tv_detail_location"
+                tools:text="Dicoding" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_favorite"
+        style="@style/FabCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/favorite"
+        android:src="@drawable/ic_favorite"
+        app:layout_anchor="@id/nested_scroll_view"
+        app:layout_anchorGravity="bottom|end"
+        app:shapeAppearanceOverlay="@style/FabShape" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                style="@style/TabLayoutCustom"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabTextAppearance="@style/TabFont" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tabs" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
